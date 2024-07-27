@@ -7,13 +7,18 @@ import * as z from "zod";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useState, useTransition } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import { LoginSchema } from "@kethireddynithinreddy/workflo-common";
+import { LoginService } from "@/services/authentication";
+import { useRouter } from "next/navigation";
 
 export const LoginForm = () => {
 
+    const router = useRouter();
+
     const [passwordIsvisible, setPasswordIsVisible] = useState(false);
+    const [isPending, startTransition] = useTransition();
 
     const form = useForm<z.infer<typeof LoginSchema>>({
         resolver: zodResolver(LoginSchema),
@@ -24,7 +29,13 @@ export const LoginForm = () => {
     });
 
     const onSubmit = (values: z.infer<typeof LoginSchema>) => {
-        console.log(values)
+
+        startTransition(async () => {
+            const response = await LoginService({...values});
+            if(response.success){
+                router.push("/home")
+            }
+        });
     }
 
 
