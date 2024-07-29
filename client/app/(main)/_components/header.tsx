@@ -12,7 +12,7 @@ export const Header = () => {
     const sidebarAtom = useSidebar();
 
     return (
-        <div className="flex items-center gap-x-2">
+        <div className="flex items-center gap-x-2 overflow-clip">
             <div className="sm:hidden" role="button" onClick={() => sidebarAtom.onToggle()}>
                 <Menu />
             </div>

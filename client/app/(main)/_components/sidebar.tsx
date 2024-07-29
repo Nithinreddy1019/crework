@@ -9,29 +9,8 @@ import { Plus } from "lucide-react"
 import Image from "next/image"
 import { useSidebar } from "@/store/use-sidebar-hook"
 import { cn } from "@/lib/utils"
+import { sidebarButtonsList } from "@/lib/constants"
 
-const sidebarButtonsList = [
-    {
-        icon: "./home.svg",
-        name: "Home"
-    },
-    {
-        icon: "./boards.svg",
-        name: "Boards"
-    },
-    {
-        icon: "./settings.svg",
-        name: "Settings"
-    },
-    {
-        icon: "./teams.svg",
-        name: "Teams"
-    },
-    {
-        icon: "./analytics.svg",
-        name: "Analytics"
-    }
-]
 
 
 export const Sidebar = () => {
@@ -70,7 +49,7 @@ export const Sidebar = () => {
                 </Button>
             </div>
 
-            <div className="flex items-center gap-x-2 bg-gray-100 py-2 px-2 rounded-[5px] w-full">
+            <div className="flex items-center gap-x-2 bg-gray-100 py-2 px-2 rounded-[5px] w-full" role="button">
                 <div>
                     <Image 
                         src={"./download.svg"}
