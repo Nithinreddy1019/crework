@@ -16,7 +16,7 @@ export const Header = () => {
             <div className="sm:hidden" role="button" onClick={() => sidebarAtom.onToggle()}>
                 <Menu />
             </div>
-            <div className="w-full flex justify-between items-center py-2">
+            <div className="w-full flex justify-between items-center ">
                 <h1 className={`text-lg sm:text-4xl font-semibold leading-none md:leading-normal ${barlow.className}`}>
                     Good morning, Username!
                 </h1>

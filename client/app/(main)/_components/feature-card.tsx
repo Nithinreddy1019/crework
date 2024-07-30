@@ -14,7 +14,7 @@ export const Featurecard = ({
     tagDescription
 }: FeaturecardProps) => {
     return (
-        <div className="px-2 py-4 flex items-center gap-x-1 md:gap-x-2 lg:gap-x-4 bg-white rounded-sm max-h-32 relative w-full">
+        <div  draggable className="px-2 py-4 flex items-center gap-x-1 md:gap-x-2 lg:gap-x-4 bg-white rounded-sm max-h-32 relative w-full">
             <Image 
                 src={image}
                 alt="opinion"
