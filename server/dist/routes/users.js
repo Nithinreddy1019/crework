@@ -43,7 +43,7 @@ userRouter.post("/signup", (req, res) => __awaiter(void 0, void 0, void 0, funct
             data: {
                 email,
                 name: username,
-                password: hashedPassword
+                password: hashedPassword,
             }
         });
         const token = yield jsonwebtoken_1.default.sign(user.id, JWT_SECRET);
